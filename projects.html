@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — John Cee Gumera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FAF8F3;
+            --charcoal: #1A1A1A;
+            --warm-gray: #4A4A4A;
+            --accent: #D4463C;
+            --border: #E5E0D8;
+            --card-bg: #FFFFFF;
+        }
+
+        html {
+            font-size: 90%; 
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 0.5rem 2rem; 
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--warm-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .page-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .page-subtitle {
+            font-size: 1.125rem;
+            color: var(--warm-gray);
+            max-width: 700px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 1.25rem; 
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.75rem; 
+            border-radius: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out backwards;
+            display: flex;
+            flex-direction: column; 
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--warm-gray);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .project-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .project-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: var(--warm-gray);
+            margin-bottom: 1rem; 
+            line-height: 1.6; 
+            font-size: 0.9rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: auto; 
+        }
+
+        .tech-tag {
+            background: var(--cream);
+            padding: 0.4rem 0.9rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.25rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                padding: 2rem;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem 0; 
+            margin-top: 1.5rem; 
+            color: var(--warm-gray);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 0.25rem;
+            transition: all 0.2s ease;
+            margin-top: 0.25rem;
+            margin-bottom: 1rem; 
+            align-self: flex-start;
+        }
+
+        .project-link:hover {
+            background: var(--cream);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .project-link.pdf::before { content: '📄'; }
+        .project-link.video::before { content: '▶'; font-size: 0.7rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="portfolio.html" class="back-link">← Back to Portfolio</a>
+            <h1 class="page-title">Projects</h1>
+        </div>
+
+        <div class="projects-grid">
+            <!-- SinTRACK -->
+            <div class="project-card">
+                <div class="project-category">Capstone Project</div>
+                <h2 class="project-title">SinTRACK</h2>
+                <p class="project-meta">Full Stack Developer & UI/UX Designer<br>June 2025 – January 2026</p>
+                <p class="project-description">
+                    IT Asset Inventory Management and Request System designed for PUP offices and ICTO administrators with machine learning-powered decision support.
+                </p>
+                <a href="https://youtu.be/1SFIr1vGOI4" class="project-link video" target="_blank">Watch Walkthrough</a>
+                <div class="tech-stack">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">UI/UX Design</span>
+                </div>
+            </div>
+
+            <!-- Woolly Friends -->
+            <div class="project-card">
+                <div class="project-category">Web Development</div>
+                <h2 class="project-title">Woolly Friends</h2>
+                <p class="project-meta">Frontend Developer & UI/UX Designer<br>May 2025</p>
+                <p class="project-description">
+                    Pet Adoption & Sales Portal featuring responsive design and interactive user experiences.
+                </p>
+                <a href=" " class="project-link video" target="_blank">Watch Walkthrough</a>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">UI/UX Design</span>
+                    <span class="tech-tag">Azure Boards</span>
+                </div>
+            </div>
+
+            <!-- Vacant Ventures -->
+            <div class="project-card">
+                <div class="project-category">Desktop Application</div>
+                <h2 class="project-title">Vacant Ventures</h2>
+                <p class="project-meta">Full Stack Developer<br>July 2024</p>
+                <p class="project-description">
+                    Student-friendly Destination Mapper helping students manage vacant time by mapping local destinations with travel information.
+                </p>
+                <a href=" " class="project-link video" target="_blank">Watch Walkthrough</a>
+                <div class="tech-stack">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">NetBeans</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">XAMPP</span>
+                </div>
+            </div>
+
+            <!-- Spotify Analysis -->
+            <div class="project-card">
+                <div class="project-category">Data Science</div>
+                <h2 class="project-title">Most Streamed Spotify Songs 2023</h2>
+                <p class="project-meta">Statistical Analyst<br>January 2025</p>
+                <p class="project-description">
+                    Dataset analysis project identifying emerging music industry trends through statistical testing and visualization.
+                </p>
+                <a href="spotify.pdf" class="project-link pdf" target="_blank">Read Full Report</a>
+                <div class="tech-stack">
+                    <span class="tech-tag">R Programming</span>
+                    <span class="tech-tag">Statistical Analysis</span>
+                    <span class="tech-tag">Data Visualization</span>
+                </div>
+            </div>
+
+            <!-- Smartphone Preferability -->
+            <div class="project-card">
+                <div class="project-category">Data Science</div>
+                <h2 class="project-title">Smartphone Preferability Patterns</h2>
+                <p class="project-meta">Data Analyst<br>July 2024</p>
+                <p class="project-description">
+                    Analysis of trends, preferences, and impact factors in smartphone purchasing behavior among university students.
+                </p>
+                <a href="smartphone.pdf" class="project-link pdf" target="_blank">Read Full Report</a>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Apriori Algorithm</span>
+                    <span class="tech-tag">Data Mining</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2026 John Cee Saguisa Gumera. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

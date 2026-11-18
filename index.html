@@ -27,10 +27,6 @@
             font-size: 90%;
         }
 
-        html {
-            font-size: 90%;
-        }
-
         body {
             font-family: 'DM Sans', sans-serif;
             background-color: var(--cream);
@@ -593,10 +589,21 @@
         .bento-card:nth-child(7) { animation-delay: 0.7s; }
         .bento-card:nth-child(8) { animation-delay: 0.8s; }
 
+        .leadership {
+            grid-column: span 8;
+        }
+
+        .certs {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+
         @media (max-width: 968px) {
             .about,
             .education,
-            .skills {
+            .skills,
+            .leadership,
+            .certs {
                 grid-column: span 12;
                 grid-row: auto;
             }
@@ -627,14 +634,6 @@
                 justify-content: center;
                 flex-wrap: wrap;
             }
-        }
-
-        .leadership {
-            grid-column: span 8;
-        }
-
-        .certs {
-            grid-column: span 4;
         }
 
         .footer {
@@ -681,8 +680,7 @@
                 <div class="card-title">About</div>
                 <div class="card-content">
                     <h3>Hello, I'm JC</h3>
-                    <p>
-I am a fresh grad Information Technology student at the Polytechnic University of the Philippines, practicing as a Full-stack developer and UI/UX designer with expertise in creating scalable web applications. </p>
+                    <p>I am a fresh grad Information Technology student at the Polytechnic University of the Philippines, practicing as a Full-stack developer and UI/UX designer with expertise in creating scalable web applications.</p>
                 </div>
             </div>
 
@@ -696,7 +694,7 @@ I am a fresh grad Information Technology student at the Polytechnic University o
                             <div class="timeline-content">
                                 <h3>BS Information Technology</h3>
                                 <p style="color: var(--accent); font-weight: 500; margin-bottom: 0.25rem;">Polytechnic University of the Philippines</p>                              
-                                <p class="timeline-date"><strong>2022 – Present</strong></p>
+                                <p class="timeline-date"><strong>2022 – 2026</strong></p>
                                 <ul class="achievement-list-simple">
                                     <li>DOST RA 7687 Scholar</li>
                                     <li>Rizal Governor's Scholar</li>
@@ -735,6 +733,7 @@ I am a fresh grad Information Technology student at the Polytechnic University o
                         <span class="tag">SQL</span>
                         <span class="tag">R</span>
                         <span class="tag">Tailwind CSS</span>
+                        <span class="tag">Google Cloud Platform</span>
                         <span class="tag">Adobe Premiere Pro</span>
                         <span class="tag">UI/UX Design</span>
                     </div>
@@ -763,6 +762,61 @@ I am a fresh grad Information Technology student at the Polytechnic University o
                 </div>
             </div>
 
+            <!-- Experience -->
+            <div class="bento-card leadership">
+                <div class="card-title">Experience</div>
+                <div class="card-content">
+                    <h3 style="margin-bottom: 0.75rem;">Google Developer Student Clubs – PUP</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.1rem;">Software Development Trainee</p>
+                        <p style="color: var(--warm-gray); font-size: 0.8rem;">Mar 2026 – June 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="bento-card certs">
+                <div class="card-title">Recent Certifications</div>
+                <div class="card-content">
+                    <div class="cert-item">
+                        <a href="https://www.credly.com/badges/3466e11e-a99b-46da-b6bb-24060356d00f/linked_in_profile" target="_blank" class="cert-link">
+                            <div class="cert-title">Python Essentials 2</div>
+                            <div class="cert-org">Cisco • 2026</div>
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <a href="https://www.credly.com/badges/5a8068d5-082f-43ea-bc53-5168bbb64769/linked_in_profile" target="_blank" class="cert-link">
+                            <div class="cert-title">Python Essentials 1</div>
+                            <div class="cert-org">Cisco • 2026</div>
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <a href="https://www.theforage.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_697ba66a16c6db3a521df2c4_1769712493781_completion_certificate.pdf" target="_blank" class="cert-link">
+                            <div class="cert-title">Cybersecurity Job Simulation</div>
+                            <div class="cert-org">Mastercard • 2026</div>
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <a href="#" target="_blank" class="cert-link">
+                            <div class="cert-title">GCP Fundamentals: Core Infrastructure</div>
+                            <div class="cert-org">Trainocate Philippines • 2025</div>
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/UZFSXSCKAEYT" target="_blank" class="cert-link">
+                            <div class="cert-title">Computer Networking</div>
+                            <div class="cert-org">Coursera • 2022</div>
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/4WXZSTKJW39Z" target="_blank" class="cert-link">
+                            <div class="cert-title">UX Design Foundations</div>
+                            <div class="cert-org">Coursera • 2022</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Leadership -->
             <div class="bento-card leadership">
                 <div class="card-title">Leadership</div>
@@ -784,32 +838,11 @@ I am a fresh grad Information Technology student at the Polytechnic University o
                     </div>
                 </div>
             </div>
-
-            <!-- Certifications -->
-            <div class="bento-card certs">
-                <div class="card-title">Recent Certifications</div>
-                <div class="card-content">
-                    <div class="cert-item">
-                        <a href="https://www.theforage.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_697ba66a16c6db3a521df2c4_1769712493781_completion_certificate.pdf" target="_blank" class="cert-link">
-                            <div class="cert-title">Cybersecurity Job Simulation</div>
-                            <div class="cert-org">Mastercard • 2026</div>
-                        </a>
-                    </div>
-                    <div class="cert-item">
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/UZFSXSCKAEYT" target="_blank" class="cert-link">
-                            <div class="cert-title">Computer Networking</div>
-                            <div class="cert-org">Coursera • 2022</div>
-                        </a>
-                    </div>
-                    <div class="cert-item">
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/4WXZSTKJW39Z" target="_blank" class="cert-link">
-                            <div class="cert-title">UX Design Foundations</div>
-                            <div class="cert-org">Coursera • 2022</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <footer class="footer">
-            <p>© 2026 John Cee Saguisa Gumera. All rights reserved.</p>
+            <p>© 2026 John Cee Gumera. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
